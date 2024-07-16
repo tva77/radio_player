@@ -241,7 +241,7 @@ class RadioPlayerService : Service(), Player.Listener {
         if (playbackState == Player.STATE_IDLE && playWhenReady == true) {
             player.prepare()
         }
-        if (playbackState == Player.STATE_IDLE && playWhenReady == false) {
+        if (playbackState == Player.STATE_READY && playWhenReady == false) {
             player.stop()
         }
 

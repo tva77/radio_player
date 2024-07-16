@@ -108,6 +108,7 @@ class RadioPlayerService : Service(), Player.Listener {
 
     fun pause() {
         player.playWhenReady = false
+        player.stop()
     }
 
     /** Initializing the player with a new data. */

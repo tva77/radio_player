@@ -239,9 +239,11 @@ class RadioPlayerService : Service(), Player.Listener {
         super.onPlayWhenReadyChanged(playWhenReady, reason)
 
         if (playbackState == Player.STATE_IDLE && playWhenReady == true) {
+            player.prepare()
+        }
+        if (playWhenReady == false) {
             player.stop()
         }
-
 
         // Notify the client.
         val stateIntent = Intent(ACTION_STATE_CHANGED)

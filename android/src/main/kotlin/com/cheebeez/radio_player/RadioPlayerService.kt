@@ -224,7 +224,6 @@ class RadioPlayerService : Service(), Player.Listener {
             .setMediaDescriptionAdapter(mediaDescriptionAdapter)
             .setNotificationListener(notificationListener)
             .build().apply {
-                setUsePlayStopActions(true)
                 setUsePlayPauseActions(false)
                 setUseFastForwardAction(false)
                 setUseRewindAction(false)
@@ -241,7 +240,8 @@ class RadioPlayerService : Service(), Player.Listener {
 
         if (playbackState == Player.STATE_IDLE && playWhenReady == true) {
             player.prepare()
-        }else{
+        }
+        if (playbackState == Player.STATE_IDLE && playWhenReady == false) {
             player.stop()
         }
 

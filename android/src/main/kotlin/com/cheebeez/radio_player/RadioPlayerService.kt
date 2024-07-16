@@ -241,6 +241,8 @@ class RadioPlayerService : Service(), Player.Listener {
 
         if (playbackState == Player.STATE_IDLE && playWhenReady == true) {
             player.prepare()
+        }else{
+            player.stop()
         }
 
         // Notify the client.

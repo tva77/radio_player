@@ -181,7 +181,7 @@ class RadioPlayerService : Service(), Player.Listener {
         // Setup audio focus
         val audioAttributes: AudioAttributes = AudioAttributes.Builder()
             .setUsage(C.USAGE_MEDIA)
-            .setContentType(C.AUDIO_CONTENT_TYPE_MUSIC)
+            .setContentType(C.CONTENT_TYPE_MUSIC)
             .build()
 
         player.setAudioAttributes(audioAttributes, true);

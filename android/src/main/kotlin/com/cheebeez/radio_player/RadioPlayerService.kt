@@ -224,6 +224,7 @@ class RadioPlayerService : Service(), Player.Listener {
             .setMediaDescriptionAdapter(mediaDescriptionAdapter)
             .setNotificationListener(notificationListener)
             .build().apply {
+                setUsePlayStopActions(true)
                 setUsePlayPauseActions(false)
                 setUseFastForwardAction(false)
                 setUseRewindAction(false)
